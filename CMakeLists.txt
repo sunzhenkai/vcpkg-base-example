@@ -10,13 +10,15 @@ find_package(libuv CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES $<IF:$<TARGET_EXISTS:libuv::uv_a>,libuv::uv_a,libuv::uv>)
 
 # datastax-cpp-driver
-FIND_PACKAGE(PkgConfig REQUIRED)
-pkg_check_modules(cassandra_static REQUIRED IMPORTED_TARGET cassandra_static)
+find_package(datastax-cpp-driver CONFIG REQUIRED CONFIGS cassandra_staticConfig.cmake)
+list(APPEND TARGET_LIBRARIES cassandra::cassandra_static)
+#FIND_PACKAGE(PkgConfig REQUIRED)
+#pkg_check_modules(cassandra_static REQUIRED IMPORTED_TARGET cassandra_static)
 #list(APPEND TARGET_LIBRARIES PkgConfig::cassandra_static)
 
 # cpp-common
 pkg_check_modules(cpp-common REQUIRED IMPORTED_TARGET cpp-common)
-FIND_PACKAGE(cpp-common CONFIG REQUIRED)
+find_package(cpp-common CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES cpp-common::cpp-common)
 
 message(STATUS "TARGET_LIBRARIES=${TARGET_LIBRARIES}")
