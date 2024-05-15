@@ -17,7 +17,7 @@ list(APPEND TARGET_LIBRARIES cassandra::cassandra_static)
 #list(APPEND TARGET_LIBRARIES PkgConfig::cassandra_static)
 
 # cpp-common
-pkg_check_modules(cpp-common REQUIRED IMPORTED_TARGET cpp-common)
+#pkg_check_modules(cpp-common REQUIRED IMPORTED_TARGET cpp-common)
 find_package(cpp-common CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES cpp-common::cpp-common)
 
