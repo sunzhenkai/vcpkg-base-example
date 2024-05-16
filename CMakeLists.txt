@@ -21,6 +21,9 @@ list(APPEND TARGET_LIBRARIES cassandra::cassandra_static)
 find_package(cpp-common CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES cpp-common::cpp-common)
 
+find_package(babylon CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES babylon::babylon)
+
 message(STATUS "TARGET_LIBRARIES=${TARGET_LIBRARIES}")
 
 # target

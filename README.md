@@ -13,4 +13,5 @@ vcpkg install {port} --overlay-ports=/path/to/source/overlay-port
 
 # for example
 vcpkg install datastax-cpp-driver --overlay-ports=/home/wii/code/vcpkg-base-example/overlay-port
+vcpkg install babylon --overlay-ports=/home/wii/code/vcpkg-base-example/overlay-port
 ```
