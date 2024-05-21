@@ -24,6 +24,21 @@ list(APPEND TARGET_LIBRARIES cpp-common::cpp-common)
 find_package(babylon CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES babylon::babylon)
 
+# gperftools
+find_package(tcmalloc_static CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES tcmalloc::tcmalloc_static)
+find_package(tcmalloc_minimal_static CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES tcmalloc_minimal::tcmalloc_minimal_static)
+find_package(profiler_static CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES profiler::profiler_static)
+find_package(tcmalloc_and_profiler_static CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES tcmalloc_and_profiler::tcmalloc_and_profiler_static)
+
+# leveldb
+find_package(leveldb CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES leveldb::leveldb)
+
+list(APPEND TARGET_LIBRARIES pthread)
 message(STATUS "TARGET_LIBRARIES=${TARGET_LIBRARIES}")
 
 # target

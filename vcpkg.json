@@ -9,7 +9,14 @@
             "name": "cpp-common",
             "version>=": "0.0.9"
         },
-        "babylon"
+        "babylon",
+        "gperftools",
+        {
+            "name": "leveldb",
+            "features": [
+                "tcmalloc"
+            ]
+        }
     ],
     "overrides": [
         {

@@ -8,13 +8,15 @@
         {
             "kind": "git",
             "repository": "https://github.com/sunzhenkai/vcpkg-base.git",
-            "baseline": "694f8d8029feafffd7ceaf488a105e912769fdbe",
+            "baseline": "dcf2cf381f39a012e467aa3e1667b7191c2286c1",
             "reference": "main",
             "packages": [
                 "seastar",
                 "datastax-cpp-driver",
                 "cpp-common",
-                "babylon"
+                "babylon",
+                "gperftools",
+                "leveldb"
             ]
         }
     ]
