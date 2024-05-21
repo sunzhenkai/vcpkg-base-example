@@ -38,7 +38,11 @@ list(APPEND TARGET_LIBRARIES tcmalloc_and_profiler::tcmalloc_and_profiler_static
 find_package(leveldb CONFIG REQUIRED)
 list(APPEND TARGET_LIBRARIES leveldb::leveldb)
 
-list(APPEND TARGET_LIBRARIES pthread)
+# ppconsul
+find_package(ppconsul CONFIG REQUIRED)
+list(APPEND TARGET_LIBRARIES ppconsul)
+
+find_package(ZLIB REQUIRED)
 message(STATUS "TARGET_LIBRARIES=${TARGET_LIBRARIES}")
 
 # target

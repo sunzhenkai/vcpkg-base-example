@@ -16,7 +16,9 @@
             "features": [
                 "tcmalloc"
             ]
-        }
+        },
+        "ppconsul",
+        "zlib"
     ],
     "overrides": [
         {

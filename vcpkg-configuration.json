@@ -8,7 +8,7 @@
         {
             "kind": "git",
             "repository": "https://github.com/sunzhenkai/vcpkg-base.git",
-            "baseline": "dcf2cf381f39a012e467aa3e1667b7191c2286c1",
+            "baseline": "f3d674c4c9621e382af04488cd0736761a90de27",
             "reference": "main",
             "packages": [
                 "seastar",
@@ -16,7 +16,8 @@
                 "cpp-common",
                 "babylon",
                 "gperftools",
-                "leveldb"
+                "leveldb",
+                "ppconsul"
             ]
         }
     ]
