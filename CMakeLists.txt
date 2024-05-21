@@ -45,6 +45,17 @@ list(APPEND TARGET_LIBRARIES ppconsul)
 find_package(ZLIB REQUIRED)
 message(STATUS "TARGET_LIBRARIES=${TARGET_LIBRARIES}")
 
+# generate protocols
+GenerateProtoBufMessage(
+        SRCS PB_SRCS
+        HEADERS PB_HEADERS
+        OUTPUT ${PROJECT_BINARY_DIR}/gen/protobuf/cpp
+        IMPORT ${PROJECT_SOURCE_DIR}/proto
+        FILES proto/*.proto
+)
+
+include_directories(${PB_HEADERS})
+
 # target
-ADD_EXECUTABLE(main src/main.cpp)
+ADD_EXECUTABLE(main src/main.cpp ${PB_SRCS})
 TARGET_LINK_LIBRARIES(main PRIVATE ${TARGET_LIBRARIES})

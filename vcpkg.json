@@ -18,7 +18,8 @@
             ]
         },
         "ppconsul",
-        "zlib"
+        "zlib",
+        "protobuf"
     ],
     "overrides": [
         {
