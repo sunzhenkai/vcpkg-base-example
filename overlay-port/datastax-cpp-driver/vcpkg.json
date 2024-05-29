@@ -7,8 +7,14 @@
   "license": "Apache-2.0",
   "supports": "linux & x64",
   "dependencies": [
-    "vcpkg-cmake",
-    "vcpkg-cmake-config",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    },
     "curl",
     "libuv",
     "openssl",
