@@ -15,10 +15,9 @@ vcpkg_execute_build_process(
     LOGNAME "build_polaris")
 
 vcpkg_execute_build_process(
-    COMMAND ar rc libpolaris_api.a ${SOURCE_PATH}/build64/lib/libpolaris_api.a ${SOURCE_PATH}/third_party/protobuf/build64/libprotobuf.a
+    COMMAND sh "${CMAKE_CURRENT_LIST_DIR}/re_archive.sh"
     WORKING_DIRECTORY ${SOURCE_PATH}
-    LOGNAME "archive_polaris"
-)
+    LOGNAME "archive_polaris")
 
 # add_custom_target(combined ALL
 #    COMMAND ${CMAKE_CXX_ARCHIVE_CREATE} libcombined.a $<TARGET_FILE:lib1> $<TARGET_FILE:lib2>)
@@ -27,10 +26,11 @@ vcpkg_execute_build_process(
 #execute_process(COMMAND mkdir -p ${SOURCE_PATH}/build64/lib COMMAND touch ${SOURCE_PATH}/build64/lib/libpolaris_api.a)
 
 # debug
-file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/debug)
-file(COPY ${SOURCE_PATH}/libpolaris_api.a DESTINATION ${CURRENT_PACKAGES_DIR}/debug)
+file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/debug/lib)
+file(MAKE_DIRECTORY ${CURRENT_PACKAGES_DIR}/lib)
+file(COPY ${SOURCE_PATH}/libpolaris_api.a DESTINATION ${CURRENT_PACKAGES_DIR}/debug/lib)
 # release
-file(COPY ${SOURCE_PATH}/libpolaris_api.a DESTINATION ${CURRENT_PACKAGES_DIR})
+file(COPY ${SOURCE_PATH}/libpolaris_api.a DESTINATION ${CURRENT_PACKAGES_DIR}/lib)
 file(COPY ${SOURCE_PATH}/include DESTINATION ${CURRENT_PACKAGES_DIR})
 
 file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
