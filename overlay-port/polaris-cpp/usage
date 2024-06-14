@@ -1,0 +1,4 @@
+polaris provides header files and library binary file:
+
+    find_library(PolarisApi NAMES polaris_api REQUIRED)
+    target_link_libraries(main PRIVATE ${PolarisApi})
